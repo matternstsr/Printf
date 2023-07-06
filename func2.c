@@ -43,6 +43,13 @@ void print_number(int n)
 	size = 0;
 	div = 1;
 
+	/* Check if n is 0, and end */
+	if (n == 0)
+	{
+		_putchar('0');
+		return;
+	}
+
 	/* If n is negative, make it positive and print a '-' sign */
 	if (n < 0)
 	{
