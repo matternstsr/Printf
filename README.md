@@ -1,4 +1,4 @@
-
+In his beard lived three <span style="color:red">cardinals</span>.
 
 
 # Our amazing printf() function
