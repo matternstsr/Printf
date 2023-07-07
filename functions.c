@@ -36,12 +36,12 @@ int _print_string(va_list args)
 		return (i);
 	}
 
-	_write(')');
-	_write('l');
-	_write('l');
-	_write('u');
-	_write('n');
 	_write('(');
+	_write('n');
+	_write('u');
+	_write('l');
+	_write('l');
+	_write(')');
 	return (6);
 }
 
