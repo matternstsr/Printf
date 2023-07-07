@@ -1,4 +1,32 @@
-![color picker](https://media4.giphy.com/media/5WAdRevloGjuw/giphy.gif?cid=ecf05e477cwhhnca0tvot79eg8eq2mix7nhpwjh6q78o1z45&ep=v1_gifs_search&rid=giphy.gif&ct=g)
+<html>
+  <head>
+    <title>Title of the document</title>
+  </head>
+  <body>
+    <span style="color:#FF0000">O</span>
+    <span style="color:#66CC66">u</span>
+    <span style="color:#FF9966">r</span>
+    <span style="color:#FFCCCC"> </span>
+    <span style="color:#FFCCCC">A</span>
+    <span style="color:#FF0066">m</span>
+    <span style="color:#FF0000">a</span>
+    <span style="color:#66CC66">z</span>
+    <span style="color:#FF9966">i</span>
+    <span style="color:#FFCCCC">n</span>
+    <span style="color:#FF0066">g</span>
+    <span style="color:#FF0000"> </span>
+    <span style="color:#66CC66">P</span>
+    <span style="color:#FF9966">r</span>
+    <span style="color:#FFCCCC">i</span>
+    <span style="color:#FF0066">n</span>
+    <span style="color:#FF0000">t</span>
+    <span style="color:#66CC66">f</span>
+    <span style="color:#FF9966">(</span>
+    <span style="color:#FFCCCC">)</span>
+    <span style="color:#FF0066">!</span>
+  </body>
+</html>
+
 
 **Our amazing _printf() function**
 
