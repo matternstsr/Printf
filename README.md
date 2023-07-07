@@ -1,4 +1,4 @@
-![](https://github.com/holbertonschool-printf/image.gif)
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXR0cmRjdjR6ajh3eHA3aHl3NWtjYnF1ajg0cmc5ZzFvMjI0aGJoMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vCimx9PwCWjejur1qB/giphy.gif)
 
 
 **Our amazing _printf() function**
