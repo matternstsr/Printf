@@ -76,11 +76,11 @@ int _printspec(char format, va_list args)
 }
 
 /**
-  * _print_invalid_spec - Prints a invalid specifier
+  * _badspec - Prints a bad specifier
   * @prev_format: The previous specifier of actual specifier
-  * @format: The specifier to prints
-  * @ct: The current count before prints invalid specifiers
-  * Return: The current count after prints invalid specifiers
+  * @format: The selected specifider to print
+  * @ct: what the count is before prints bad specs.
+  * Return: what the count is after prints invalid specifiers
   */
 int _badspec(char prev_format, char format, int ct)
 {
@@ -100,9 +100,9 @@ int _badspec(char prev_format, char format, int ct)
 }
 
 /**
-  * _validate_char - validate the type
+  * _charchecker - validate the type
   * @_type: character to be comparate
-  * Return: 1 if char is equal to a type
+  * Return: 1 if the character is equal to a type
   */
 int _charchecker(char _type)
 {
