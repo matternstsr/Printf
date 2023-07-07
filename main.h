@@ -10,6 +10,7 @@ void _puts(char *str);
 int _printf(const char *format, ...);
 void _recursion_integer(int a);
 int _print_a_integer(va_list args);
+int _write(char c);
 
 /**
  * struct format_type - Struct op
