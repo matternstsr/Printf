@@ -1,5 +1,4 @@
-![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXR0cmRjdjR6ajh3eHA3aHl3NWtjYnF1ajg0cmc5ZzFvMjI0aGJoMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vCimx9PwCWjejur1qB/giphy.gif)
-
+![color picker](https://media4.giphy.com/media/5WAdRevloGjuw/giphy.gif?cid=ecf05e477cwhhnca0tvot79eg8eq2mix7nhpwjh6q78o1z45&ep=v1_gifs_search&rid=giphy.gif&ct=g)
 
 **Our amazing _printf() function**
 
