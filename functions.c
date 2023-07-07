@@ -10,6 +10,7 @@
   */
 int _print_char(va_list args)
 {
+	/* Write the character to the output */
 	_write(va_arg(args, int));
 	return (1);
 }
@@ -29,6 +30,7 @@ int _print_string(va_list args)
 	{
 		while (arg[i])
 		{
+			/* Write each character of the string to the output */
 			_write(arg[i]);
 			i++;
 		}
@@ -36,6 +38,7 @@ int _print_string(va_list args)
 		return (i);
 	}
 
+	/* If the string is NULL, print "(null)" */
 	_write('(');
 	_write('n');
 	_write('u');
@@ -58,6 +61,8 @@ int _print_integer(va_list args)
 
 	check = va_arg(args, int);
 	mkunsnd = check;
+
+	/* If the integer is negative, print a '-' and make it positive */
 	if (mkunsnd < 0)
 	{
 		_write('-');
@@ -65,13 +70,17 @@ int _print_integer(va_list args)
 		check = mkunsnd;
 		ct += 1;
 	}
+
+	/* Count the number of digits in the integer */
 	while (check > 9)
 	{
 		check = check / 10;
 		ct++;
 	}
 
+	/* Print the integer */
 	_integer_printer(mkunsnd);
+
 	return (ct);
 }
 
@@ -86,7 +95,10 @@ void _integer_printer(int a)
 	unsigned int intprnt;
 
 	intprnt = a;
+
+	/* Recursively print each digit of the integer */
 	if (intprnt / 10)
-		_integer_printer(intprnt / 10);
+	_integer_printer(intprnt / 10);
+	/* Write the current digit to the output */
 	_write(intprnt % 10 + '0');
 }
