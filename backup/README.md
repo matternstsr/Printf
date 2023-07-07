@@ -1,3 +1,4 @@
+![image](https://github.com/matternstsr/holbertonschool-printf/assets/132416663/ce03e6b8-3b1e-4272-b8bb-e69bd775630a)
 # Our amazing printf() function
 
 **_printf** - formatted output conversion
