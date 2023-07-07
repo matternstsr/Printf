@@ -1,31 +1,7 @@
-<html>
-  <body>
-    <span style="color:red">O</span>
-    <span style="color:red">u</span>
-    <span style="color:red">r</span>
-    <span style="color:red"> </span>
-    <span style="color:red">A</span>
-    <span style="color:red">m</span>
-    <span style="color:red">a</span>
-    <span style="color:red">z</span>
-    <span style="color:red">i</span>
-    <span style="color:red">n</span>
-    <span style="color:red">g</span>
-    <span style="color:red"> </span>
-    <span style="color:red">P</span>
-    <span style="color:red">r</span>
-    <span style="color:red">i</span>
-    <span style="color:red">n</span>
-    <span style="color:red">t</span>
-    <span style="color:red">f</span>
-    <span style="color:red">(</span>
-    <span style="color:red">)</span>
-    <span style="color:red">!</span>
-  </body>
-</html>
 
 
-**Our amazing _printf() function**
+
+# Our amazing printf() function
 
 **_printf** - formatted output conversion
 
