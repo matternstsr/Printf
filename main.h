@@ -1,27 +1,24 @@
 #ifndef MAIN_H
 #define MAIN_H
-
-void print_char(va_list args);
-void print_string(va_list args);
-void print_percent(va_list args __attribute__((unused)));
-void print_int(va_list args);
-int _putchar(char c);
-void _puts(char *str);
-int _printf(const char *format, ...);
-void _recursion_integer(int a);
-int _print_a_integer(va_list args);
-int _write(char c);
-
+#include <stdarg.h>
 /**
- * struct format_type - Struct op
- *
- * @type: The format type
- * @f: The function associated with the format type
- */
-typedef struct format_type
+  * struct specifiers - Struct prototype specifiers
+  * @specifier: The converting specifier
+  * @f: pointer to the needed function
+  */
+typedef struct specifiers
 {
-	char type;
-	void (*f)(va_list);
-} f_type;
-
-#endif
+	char *specifier;
+	int (*f)(va_list args);
+} spc_dt;
+int _write(char c);
+int _printf(const char *format, ...);
+int _print_char(va_list args);
+int _print_string(va_list args);
+int _our_formats(const char *format, va_list args);
+int _printspec(char format, va_list args);
+int _badspec(char prev_format, char format, int count);
+int _print_integer(va_list args);
+void _integer_printer(int a);
+int _charchecker(char _type);
+#endif 

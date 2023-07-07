@@ -1,5 +1,3 @@
-
-
 **Our amazing _printf() function**
 
 **_printf** - formatted output conversion
@@ -38,32 +36,32 @@ The format string is a character string, beginning and ending inits initial shif
 * **int _write(char c)**
   This function gets a char parameter and writes the parameter to the stdout, the standard output stream.
 
-* ***int _print_a_char (va_list args)***
+* ***int _print_char (va_list args)***
   This function gets a variadic arguments list, traverse the list, prints each character of char type and returns the length of the character.
 
-* ***int _print_a_string (va_list args)***
+* ***int _print_string (va_list args)***
 This function gets a variadic arguments list, traverse the list, prints each string and returns the length of the string.
 
-* **int _print_a_integer (va_list args)**
+* **int _print_integer (va_list args)**
 This function gets a variadic arguments list, traverse the list, prints each number of int type and returns the length of the integer.
 
-* **int _print_format (const char \*format, va_list args)**
+* **int _our_formats (const char \*format, va_list args)**
 This function gets a format to be printed and a variadic arguments list, next to check if the format is valid or invalid and according with the verification the resulting output is written to the standard output stream and returns the format length.
 
-* **int _print_spec (char format, va_list args):**
+* **int _printspec (char format, va_list args):**
 This function gets a format valid to be printed and a variadic arguments list to find the format in the list and selects the appropriate function to execute and writes the format to the standard output stream and returns the length of the valid format.
 
-* **int _print_invalid_spec (char prev_format, char format, int count)**
+* **int _badspec (char prev_format, char format, int count)**
 This function gets the previous format of the current format, the actual format and the current count of printed characters. Next, the invalid format is written to the standard output stream and returns the length of the invalid format.
 
-* **void _recursion_integer(int a)**
+* **void _integer_printer(int a)**
 This function gets an integer and prints the last digit of the number as recursion is applied.
 
-* **int _validate_char(char _type)**
+* **int _charchecker(char _type)**
 Gets a type and checks if the passed parameter is present in a structure of valid conversion specifiers. Next, returns if the parameter is valid or invalid.
 
 * **Return Value**
-Upon successful return, the **_printf()** function return the number of characters printed (excluding the null byte used to end output to strings. If an output error is encountered, a negative value is returned.
+If not errors, the **_printf()** function return the number of characters printed (excluding the null byte used to end output to strings. If an output error is encountered, a negative value is returned.
 
 *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
 
@@ -87,4 +85,3 @@ _printf("%s", "Holberton is awesome"); **// the output will be: Holberton is awe
 
 **_printf()** (often confused with printf()) is written and maintained by Matt Ernst and Connor True.
 
- 

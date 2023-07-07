@@ -97,34 +97,4 @@ int _printf(const char *format, ...)
 		{'i', print_int},
 		{0, NULL}
 	};
-
-	va_start(args, format);
-	count = 0;
-
-	/* Loop through each character in the format string */
-	for (i = 0; format[i] != '\0'; i++)
-	{
-		/* If the char is '%', check next char for a format specifier */
-		if (format[i] == '%')
-		{
-			i++;
-			for (j = 0; formats[j].type != 0; j++)
-			{
-				if (format[i] == formats[j].type)
-				{
-					formats[j].f(args);
-					count++;
-					break;
-				}
-			}
-		}
-		else /* If the current character is not a '%', just print it */
-		{
-			_putchar(format[i]);
-			count++;
-		}
-	}
-
-	va_end(args);
-	return (count);
 }
