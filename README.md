@@ -1,3 +1,5 @@
+![alt text](https://github.com/[matternstsr]/[holbertonschool-printf]/blob/[branch]/image.gif?raw=true)
+
 **Our amazing _printf() function**
 
 **_printf** - formatted output conversion
