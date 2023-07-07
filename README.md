@@ -1,4 +1,5 @@
-![alt text](https://github.com/[matternstsr]/[holbertonschool-printf]/blob/[branch]/image.gif?raw=true)
+![](https://github.com/holbertonschool-printf/image.gif)
+
 
 **Our amazing _printf() function**
 
