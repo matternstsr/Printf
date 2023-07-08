@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
-  * _our_formats - format selection
-  * @format: The formats that are chosen for printing
-  * @args: A list of variadic arguments
-  * Return: The length of the format
-  */
+ * _our_formats - format selection
+ * @format: The formats that are chosen for printing
+ * @args: A list of variadic arguments
+ * Return: The length of the format
+ */
 int _our_formats(const char *format, va_list args)
 {
 	int ct = 0;
@@ -29,7 +29,8 @@ int _our_formats(const char *format, va_list args)
 
 			if (_charchecker(format[i]) == 0)
 			{
-				ct = _badspec(format[i - 1], format[i], ct);
+				ct += _write('%');
+				ct += _write(format[i]);
 			}
 			else
 			{
@@ -48,14 +49,14 @@ int _our_formats(const char *format, va_list args)
 }
 
 /**
-  * _printspec - Prints a valid specifier
-  * @format: The specifier to prints
-  * @args: A list of variadic arguments
-  * Return: The length of the specifier
-  */
+ * _printspec - Prints a valid specifier
+ * @format: The specifier to prints
+ * @args: A list of variadic arguments
+ * Return: The length of the specifier
+ */
 int _printspec(char format, va_list args)
 {
-	int i  = 0, length = 0;
+	int i = 0, length = 0;
 	spc_dt _types[] = {
 		{"c", _print_char},
 		{"s", _print_string},
@@ -76,37 +77,13 @@ int _printspec(char format, va_list args)
 }
 
 /**
-  * _badspec - Prints a bad specifier
-  * @prev_format: The previous specifier of actual specifier
-  * @format: The selected specifider to print
-  * @ct: what the count is before prints bad specs.
-  * Return: what the count is after prints invalid specifiers
-  */
-int _badspec(char prev_format, char format, int ct)
-{
-	ct += _write('%');
-
-	if (prev_format == ' ')
-	{
-		ct += _write(' ');
-		ct += _write(format);
-	}
-	else
-	{
-		ct += _write(format);
-	}
-
-	return (ct);
-}
-
-/**
-  * _charchecker - validate the type
-  * @_type: character to be comparate
-  * Return: 1 if the character is equal to a type
-  */
+ * _charchecker - validate the type
+ * @_type: character to be comparate
+ * Return: 1 if the character is equal to a type
+ */
 int _charchecker(char _type)
 {
-	char _types[] = {'c', 's', 'd', 'i', 'b', '%'};
+	char _types[] = {'c', 's', 'd', 'i', '%'};
 	int i = 0;
 
 	while (_types[i])
