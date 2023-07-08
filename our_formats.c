@@ -9,43 +9,43 @@
  */
 int _our_formats(const char *format, va_list args)
 {
-    int ct = 0;
-    int i = 0;
+	int ct = 0;
+	int i = 0;
 
-    while (format && format[i])
-    {
-        if (format[i] == '%')
-        {
-            if (format[i + 1] == '\0')
-                return (-1);
+	while (format && format[i])
+	{
+		if (format[i] == '%')
+		{
+			if (format[i + 1] == '\0')
+				return (-1);
 
-            i++;
+			i++;
 
-            while (format[i] == ' ')
-                i++;
+			while (format[i] == ' ')
+				i++;
 
-            if (format[i] == '%')
-                ct += _write(format[i]);
+			if (format[i] == '%')
+				ct += _write(format[i]);
 
-            if (_charchecker(format[i]) == 0)
-            {
-                ct += _write('%');
-                ct += _write(format[i]);
-            }
-            else
-            {
-                ct += _printspec(format[i], args);
-            }
-        }
-        else
-        {
-            ct += _write(format[i]);
-        }
+			if (_charchecker(format[i]) == 0)
+			{
+				ct += _write('%');
+				ct += _write(format[i]);
+			}
+			else
+			{
+				ct += _printspec(format[i], args);
+			}
+		}
+		else
+		{
+			ct += _write(format[i]);
+		}
 
-        i++;
-    }
+		i++;
+	}
 
-    return (ct);
+	return (ct);
 }
 
 /**
@@ -56,24 +56,24 @@ int _our_formats(const char *format, va_list args)
  */
 int _printspec(char format, va_list args)
 {
-    int i = 0, length = 0;
-    spc_dt _types[] = {
-        {"c", _print_char},
-        {"s", _print_string},
-        {"d", _print_integer},
-        {"i", _print_integer},
-        {NULL, NULL}
-    };
+	int i = 0, length = 0;
+	spc_dt _types[] = {
+		{"c", _print_char},
+		{"s", _print_string},
+		{"d", _print_integer},
+		{"i", _print_integer},
+		{NULL, NULL}
+	};
 
-    while (_types[i].specifier)
-    {
-        if (*_types[i].specifier == format)
-            length = _types[i].f(args);
+	while (_types[i].specifier)
+	{
+		if (*_types[i].specifier == format)
+			length = _types[i].f(args);
 
-        i++;
-    }
+		i++;
+	}
 
-    return (length);
+	return (length);
 }
 
 /**
@@ -83,14 +83,14 @@ int _printspec(char format, va_list args)
  */
 int _charchecker(char _type)
 {
-    char _types[] = {'c', 's', 'd', 'i', 'b', '%'};
-    int i = 0;
+	char _types[] = {'c', 's', 'd', 'i', 'b', '%'};
+	int i = 0;
 
-    while (_types[i])
-    {
-        if (_types[i] == _type)
-            return (1);
-        i++;
-    }
-    return (0);
+	while (_types[i])
+	{
+		if (_types[i] == _type)
+			return (1);
+		i++;
+	}
+	return (0);
 }
