@@ -38,7 +38,7 @@ int _our_formats(const char *format, va_list args)
 				ct += _write(format[i]);
 
 			/* If the next character is not a valid format specifier, print '%' */
-			if (_charchecker(format[i]) == 0)
+			if (_printspec(format[i]) == 0)
 			{
 				ct += _write('%');
 				ct += _write(format[i]);
