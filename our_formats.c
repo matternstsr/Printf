@@ -83,7 +83,7 @@ int _printspec(char format, va_list args)
  */
 int _charchecker(char _type)
 {
-	char _types[] = {'c', 's', 'd', 'i', 'b', '%'};
+	char _types[] = {'c', 's', 'd', 'i', '%'};
 	int i = 0;
 
 	while (_types[i])
