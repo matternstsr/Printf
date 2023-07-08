@@ -55,21 +55,23 @@ int _print_string(va_list args)
   */
 int _print_integer(va_list args)
 {
-	int ct = 1, mkunsnd = 0;
-	unsigned int check = 0;
+	int ct = 1, check = 0;
+	unsigned int mkunsnd = 0;
 	int intprnt[10];
 	int i = 0;
 
 	check = va_arg(args, int);
-	mkunsnd = check;
 
 	/* If the integer is negative, print a '-' and make it positive */
-	if (mkunsnd < 0)
+	if (check < 0)
 	{
 		_write('-');
-		mkunsnd = mkunsnd * -1;
-		check = mkunsnd;
+		mkunsnd = -check;
 		ct += 1;
+	}
+	else
+	{
+		mkunsnd = check;
 	}
 
 	/* Count the number of digits in the integer */
