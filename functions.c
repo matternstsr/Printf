@@ -10,7 +10,6 @@
   */
 int _print_char(va_list args)
 {
-	/* Write the character to the output */
 	_write(va_arg(args, int));
 	return (1);
 }
@@ -30,7 +29,6 @@ int _print_string(va_list args)
 	{
 		while (arg[i])
 		{
-			/* Write each character of the string to the output */
 			_write(arg[i]);
 			i++;
 		}
@@ -38,7 +36,6 @@ int _print_string(va_list args)
 		return (i);
 	}
 
-	/* If the string is NULL, print "(null)" */
 	_write('(');
 	_write('n');
 	_write('u');
@@ -47,53 +44,49 @@ int _print_string(va_list args)
 	_write(')');
 	return (6);
 }
+
 /**
-  * _print_integer - Prints an integer
+  * _print_integer - Prints a integer
   * @args: A list of variadic arguments
   *
   * Return: The length of the string after processing
   */
 int _print_integer(va_list args)
 {
-	int ct = 1, check = 0;
-	unsigned int mkunsnd = 0;
-	int intprnt[10];
-	int i = 0;
+	int ct = 1, mkunsnd = 0;
+	unsigned int check = 0;
 
 	check = va_arg(args, int);
-
-	/* If the integer is negative, print a '-' and make it positive */
-	if (check < 0)
+	mkunsnd = check;
+	if (mkunsnd < 0)
 	{
 		_write('-');
-		mkunsnd = -check;
+		mkunsnd = mkunsnd * -1;
+		check = mkunsnd;
 		ct += 1;
 	}
-	else
-	{
-		mkunsnd = check;
-	}
-
-	/* Count the number of digits in the integer */
 	while (check > 9)
 	{
 		check = check / 10;
 		ct++;
 	}
 
-	/* Store each digit of the integer in an array */
-	while (mkunsnd > 0)
-	{
-		intprnt[i] = mkunsnd % 10;
-		mkunsnd /= 10;
-		i++;
-	}
-
-	/* Print the integer */
-	for (i--; i >= 0; i--)
-	{
-		_write(intprnt[i] + '0');
-	}
-
+	_integer_printer(mkunsnd);
 	return (ct);
+}
+
+/**
+  * _integer_printer - Prints an integer
+  * @a: int brought in for print
+  *
+  * Return: Nothing
+  */
+void _integer_printer(int a)
+{
+	unsigned int intprnt;
+
+	intprnt = a;
+	if (intprnt / 10)
+		_integer_printer(intprnt / 10);
+	_write(intprnt % 10 + '0');
 }
