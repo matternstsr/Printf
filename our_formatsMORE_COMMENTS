@@ -1,0 +1,133 @@
+#include "main.h"
+#include <stdlib.h>
+
+/**
+ * _our_formats - Selects the format for printing
+ * @format: The format string containing the characters and specifiers to be printed
+ * @args: A list of variadic arguments to be printed according to the specifiers in the format string
+ * Return: The total number of characters printed
+ *
+ * Description: This function takes a format string and a list of variadic arguments,
+ * and prints the characters and arguments according to the specifiers in the format string.
+ * The function returns the total number of characters printed.
+ */
+int _our_formats(const char *format, va_list args)
+{
+	/* Count of characters printed */
+	int char_count = 0;
+	/* Index for iterating through the format string */
+	int index = 0;
+
+	/* Iterate through the format string */
+	while (format && format[index])
+	{
+		/* If the character is a '%', check for a valid type */
+		if (format[index] == '%')
+		{
+			/* If the next character is '\0', return -1 */
+			if (format[index + 1] == '\0')
+				return (-1);
+
+			index++;
+
+			/* Skip any spaces */
+			while (format[index] == ' ')
+				index++;
+
+			/* If the character is another '%', print it */
+			if (format[index] == '%')
+				char_count += _write(format[index]);
+
+			/* If the character is not a valid type, print it as is */
+			if (_charchecker(format[index]) == 0)
+			{
+				char_count += _write('%');
+				char_count += _write(format[index]);
+			}
+			else
+			{
+				/* If the character is a valid type, print the corresponding argument */
+				char_count += _printspec(format[index], args);
+			}
+		}
+		else
+		{
+			/* If the character is not a '%', print it as is */
+			char_count += _write(format[index]);
+		}
+
+		/* Move to the next character in the format string */
+		index++;
+	}
+
+	return (char_count);
+}
+
+/**
+ * _printspec - Prints an argument according to a valid specifier
+ * @format: The specifier that determines how the argument is to be printed
+ * @args: A list of variadic arguments, one of which is to be printed according to the specifier
+ * Return: The number of characters printed for this specifier
+ *
+ * Description: This function takes a specifier and a list of variadic arguments,
+ * and prints one of the arguments according to the specifier.
+ * The function returns the number of characters printed for this specifier.
+ */
+int _printspec(char format, va_list args)
+{
+	/* Index for iterating through the array of specifiers and functions */
+	int index = 0;
+	/* Length of the printed specifier */
+	int length = 0;
+	/* Array of specifiers and their corresponding print functions */
+	spc_dt specifiers[] = {
+		{"c", _print_char},
+		{"s", _print_string},
+		{"d", _print_integer},
+		{"i", _print_integer},
+		{NULL, NULL}
+	};
+
+	/* Iterate through the array of specifiers and functions */
+	while (specifiers[index].specifier)
+	{
+		/* If the specifier matches, print the corresponding argument */
+		if (*specifiers[index].specifier == format)
+			length = specifiers[index].f(args);
+
+		/* Move to the next specifier in the array */
+		index++;
+	}
+
+	return (length);
+}
+
+/**
+ * _charchecker - Checks if a character is a valid type
+ * @type: The character to be checked against the array of valid types
+ * Return: 1 if the character is a valid type, 0 otherwise
+ *
+ * Description: This function takes a character and checks if it is a valid type,
+ * i.e. if it is one of the characters in the array of valid types.
+ * The function returns 1 if the character is a valid type, and 0 otherwise.
+ */
+int _charchecker(char type) /* Type to be checked against the array of valid types */
+{
+	/* Array of valid types */
+	char valid_types[] = {'c', 's', 'd', 'i', '%'};
+	/* Index for iterating through the array of valid types */
+	int index = 0;
+
+	/* Iterate through the array of valid types */
+	while (valid_types[index])
+	{
+		/* If the character matches one of the valid types, return 1 */
+		if (valid_types[index] == type)
+			return (1);
+
+		index++;
+	}
+
+	/* If no match was found, return 0 */
+	return (0);
+}
