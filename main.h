@@ -19,6 +19,5 @@ int _our_formats(const char *format, va_list args);
 int _printspec(char format, va_list args);
 int _badspec(char prev_format, char format, int count);
 int _print_integer(va_list args);
-void _integer_printer(int a);
 int _charchecker(char _type);
 #endif

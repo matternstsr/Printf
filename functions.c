@@ -47,9 +47,8 @@ int _print_string(va_list args)
 	_write(')');
 	return (6);
 }
-
 /**
-  * _print_integer - Prints a integer
+  * _print_integer - Prints an integer
   * @args: A list of variadic arguments
   *
   * Return: The length of the string after processing
@@ -58,6 +57,8 @@ int _print_integer(va_list args)
 {
 	int ct = 1, mkunsnd = 0;
 	unsigned int check = 0;
+	int intprnt[10];
+	int i = 0;
 
 	check = va_arg(args, int);
 	mkunsnd = check;
@@ -78,27 +79,19 @@ int _print_integer(va_list args)
 		ct++;
 	}
 
+	/* Store each digit of the integer in an array */
+	while (mkunsnd > 0)
+	{
+		intprnt[i] = mkunsnd % 10;
+		mkunsnd /= 10;
+		i++;
+	}
+
 	/* Print the integer */
-	_integer_printer(mkunsnd);
+	for (i--; i >= 0; i--)
+	{
+		_write(intprnt[i] + '0');
+	}
 
 	return (ct);
-}
-
-/**
-  * _integer_printer - Prints an integer
-  * @a: int brought in for print
-  *
-  * Return: Nothing
-  */
-void _integer_printer(int a)
-{
-	unsigned int intprnt;
-
-	intprnt = a;
-
-	/* Recursively print each digit of the integer */
-	if (intprnt / 10)
-	_integer_printer(intprnt / 10);
-	/* Write the current digit to the output */
-	_write(intprnt % 10 + '0');
 }
