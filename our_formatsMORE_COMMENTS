@@ -1,0 +1,62 @@
+#include "main.h"
+/**
+ * _our_formats - Prints formatted output
+ * @format: The format string
+ * @args: A list of variadic arguments
+ *
+ * This function prints formatted output.
+ *
+ * The format string can contain format specifiers, which are replaced
+ * with the corresponding values from the variadic argument list.
+ *
+ * Return: The length of the string after processing
+ */
+int _our_formats(const char *format, va_list args)
+{
+	int ct = 0; /* The length of the format */
+	int i = 0; /* The current index in the format string */
+	int j; /* The index in the specifier array */
+
+	/* Iterate over the format string */
+	while (format && format[i])
+	{
+		/* If the current character is '%' */
+		if (format[i] == '%')
+		{
+			/* Skip any whitespace */
+			while (format[i] == ' ')
+				i++;
+
+			/* If the next character is not a valid format specifier, print '%' */
+			if (format[i] == '\0')
+				return (-1);
+
+			/* Otherwise, find the corresponding function to print the specifier */
+			j = 0;
+			while (_types[j].specifier)
+			{
+				/* If the current specifier matches the format specifier */
+				if (*_types[j].specifier == format[i])
+					break;
+				j++;
+			}
+
+			/* If the specifier is valid, print it using the corresponding function */
+			if (_types[j].specifier)
+				ct += _types[j].f(args);
+			/* Otherwise, print '%' and the format specifier */
+			else
+			{
+				ct += _write('%');
+				ct += _write(format[i]);
+			}
+		}
+		/* Otherwise, just print the current character */
+		else
+			ct += _write(format[i]);
+
+		i++;
+	}
+
+	return (ct);
+}
