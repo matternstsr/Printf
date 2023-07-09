@@ -88,7 +88,6 @@ int _print_integer(va_list args)
 		_write('-');
 		/* Converts the integer to positive. */
 		mkunsnd = mkunsnd * -1;
-		/* Converts data type to unsigned */
 		check = mkunsnd;
 		/* Updates the counter. */
 		ct++;
