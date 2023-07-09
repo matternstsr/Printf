@@ -74,39 +74,36 @@ int _print_string(va_list args)
   */
 int _print_integer(va_list args)
 {
-		int character_count = 1, unsigned_integer = 0;
-		unsigned int temp_integer = 0;
+	int character_count = 1, unsigned_integer = 0;
+	unsigned int temp_integer = 0;
 
-		/* Gets the integer from the va_list. */
-		temp_integer = va_arg(args, int);
-		unsigned_integer = temp_integer;
+	/* Gets the integer from the va_list. */
+	temp_integer = va_arg(args, int);
+	unsigned_integer = temp_integer;
 
-		/* Temp_integers if the integer is negative. */
-		if (unsigned_integer < 0)
-		{
-				/* Prints a '-' characharacter_counter to stdout. */
-				_write('-');
-				/* Converts the integer to positive. */
-				unsigned_integer = unsigned_integer * -1;
-				temp_integer = unsigned_integer;
-				/* Updates the counter. */
-				character_count++;
-		}
-
-		/* Iterates while the integer is greater than 9. */
-		while (temp_integer > 9)
-		{
-				/* Divides the integer by 10. */
-				temp_integer = temp_integer / 10;
-				/* Increments the counter. */
-				character_count++;
-		}
-
-		/* Recursively calls the funcharacter_countion to print the integer. */
-		_integer_printer(unsigned_integer);
-
-		/* Returns the length of the integer. */
-		return (character_count);
+	/* Temp_integers if the integer is negative. */
+	if (unsigned_integer < 0)
+	{
+		/* Prints a '-' characharacter_counter to stdout. */
+		_write('-');
+		/* Converts the integer to positive. */
+		unsigned_integer = unsigned_integer * -1;
+		temp_integer = unsigned_integer;
+		/* Updates the counter. */
+		character_count++;
+	}
+	/* Iterates while the integer is greater than 9. */
+	while (temp_integer > 9)
+	{
+		/* Divides the integer by 10. */
+		temp_integer = temp_integer / 10;
+		/* Increments the counter. */
+		character_count++;
+	}
+	/* Recursively calls the funcharacter_countion to print the integer. */
+	_integer_printer(unsigned_integer);
+	/* Returns the length of the integer. */
+	return (character_count);
 }
 /**
   * _integer_printer - Prints an integer recursively
