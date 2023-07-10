@@ -51,6 +51,9 @@ This function gets a format to be printed and a variadic arguments list, next to
 * **int _printspec (char format, va_list args):**
 This function gets a format valid to be printed and a variadic arguments list to find the format in the list and selects the appropriate function to execute and writes the format to the standard output stream and returns the length of the valid format.
 
+* **int _badspec (char prev_format, char format, int count)**
+This function gets the previous format of the current format, the actual format and the current count of printed characters. Next, the invalid format is written to the standard output stream and returns the length of the invalid format.
+
 * **void _integer_printer(int a)**
 This function gets an integer and prints the last digit of the number as recursion is applied.
 
