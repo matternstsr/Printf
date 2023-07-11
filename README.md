@@ -8,15 +8,15 @@
 
 **Description**
 
-The **_printf()** function produce output according to a *format* as described below. Also, write output to *stdout*, the standard output stream.
+The **_printf()** function produces output according to a *format* as described below. It writes the output to *stdout*, the standard output stream.
 
-The **_printf()** function write the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of ***stdarg(3)\*** are converted for output.
+The **_printf()** function writes the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of ***stdarg(3)\*** are converted for output.
 
 *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
 
 **Conversion specifiers**
 
-A character that specifies the type of conversion to be applied. The conversion specifiers and their meaning are:
+A character that specifies the type of conversion to be applied. The conversion specifiers and their meanings are:
 
 - **d, i**: The int\ argument should be signed decimal notation, and the resulting number is written.
 - **c**: The int\ argument is converted to a char, and the resulting character is written.
@@ -27,7 +27,7 @@ A character that specifies the type of conversion to be applied. The conversion 
 
 **Formatting of the format string**
 
-The format string is a character string, beginning and ending inits initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character % and ends with conversion specifier.
+The format string is a character string, beginning and ending in its initial shift state, if any. The format string is composed of zero or more directives: ordinary characters (not %), which are copied unchanged to the output stream; and conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification is introduced by the character % and ends with conversion specifier.
 
 *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
 
@@ -46,7 +46,7 @@ This function gets a variadic arguments list, traverse the list, prints each str
 This function gets a variadic arguments list, traverse the list, prints each number of int type and returns the length of the integer.
 
 * **int _our_formats (const char \*format, va_list args)**
-This function gets a format to be printed and a variadic arguments list, next to check if the format is valid or invalid and according with the verification the resulting output is written to the standard output stream and returns the format length.
+This function gets a format to be printed and a variadic arguments list, next it checks if the format is valid or invalid and according with the verification the resulting output is written to the standard output stream and returns the format length.
 
 * **int _printspec (char format, va_list args):**
 This function gets a format valid to be printed and a variadic arguments list to find the format in the list and selects the appropriate function to execute and writes the format to the standard output stream and returns the length of the valid format.
@@ -69,8 +69,6 @@ _printf("I love holberton"); **// the output will be: I love Holberton**
 _printf("%c", 'H'); // **the output will be: H**
 
 _printf("Complete the sentence: Holberton %s rocks.\n", "totally"); **// the output will be: Complete the sentence: Holberton totally rocks.**
-
-_printf("% s", "Holbies"); **// the output will be: Holbies**
 
 _printf("% h"); **// the output will be: % h**
 
