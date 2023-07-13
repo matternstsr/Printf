@@ -1,4 +1,4 @@
-![Our _Printf Flow Chart](https://github.com/matternstsr/holbertonschool-printf/blob/0e93858cc7f3628e6bfda44f339e18465d7343ff/flowchart.gif)
+![Our _Printf Flow Chart](https://github.com/matternstsr/holbertonschool-printf/blob/master/graph.gif)
 
 # Our amazing printf() function
 
