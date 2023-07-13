@@ -1,4 +1,4 @@
-![Our _Printf Flow Chart](https://github.com/matternstsr/holbertonschool-printf/blob/master/graph.gif)
+![Our _Printf Flow Chart](https://github.com/matternstsr/holbertonschool-printf/blob/60a415fa0e0e0755741139d21103d06f36fbd0e5/flowchart.gif)
 
 # Our amazing printf() function
 
@@ -82,4 +82,4 @@ _printf("%s", "Holberton is awesome"); **// the output will be: Holberton is awe
 
 **_printf()** (often confused with printf()) is written and maintained by Matt Ernst and Connor True.
 
-<img class="wmx100 mx-auto my8 h-auto d-block" width="139" height="114" src="https://github.com/matternstsr/holbertonschool-printf/blob/7c38aefd3d185778b6d4743a3d357d195d233e28/FLOW_CHART_STATIC.png" alt="">
+<img class="wmx100 mx-auto my8 h-auto d-block" width="139" height="114" src="https://github.com/matternstsr/holbertonschool-printf/blob/60a415fa0e0e0755741139d21103d06f36fbd0e5/FLOW_CHART_STATIC.png" alt="">
