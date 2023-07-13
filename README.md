@@ -60,7 +60,7 @@ This function gets an integer and prints the last digit of the number as recursi
 Gets a type and checks if the passed parameter is present in a structure of valid conversion specifiers. Next, returns if the parameter is valid or invalid.
 
 * **Return Value**
-If not errors, the **_printf()** function return the number of characters printed (excluding the null byte used to end output to strings. If an output error is encountered, a negative value is returned.
+With no errors, the **_printf()** function returns the number of characters printed (excluding the null byte used to end output to strings). If an output error is encountered, a negative value is returned.
 
 *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
 
