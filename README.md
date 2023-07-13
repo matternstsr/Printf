@@ -82,4 +82,4 @@ _printf("%s", "Holberton is awesome"); **// the output will be: Holberton is awe
 
 **_printf()** (often confused with printf()) is written and maintained by Matt Ernst and Connor True.
 
- <link rel="stylesheet" type="text/css" href="https://github.com/matternstsr/holbertonschool-printf/blob/98edbe18ea52cac070320a3048c2dd8d2cd05cc6/Shopping%20Process%20Flow%20Graph%20(2).jpg">
+ <link rel="stylesheet" type="text/css" href="https://github.com/matternstsr/holbertonschool-printf/blob/master/FLOW_CHART_STATIC.png?raw=true">
