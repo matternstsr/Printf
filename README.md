@@ -14,7 +14,7 @@ The **_printf()** function produces output according to a *format* as described 
 
 The **_printf()** function writes the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of ***stdarg(3)\*** are converted for output.
 
-*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  
 
 **Conversion specifiers**
 
